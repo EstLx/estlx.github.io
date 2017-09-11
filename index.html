@@ -6,17 +6,23 @@
     <title>Estelle Lepeigneux's portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
     <script src="https://use.fontawesome.com/59c390bf14.js"></script>
   </head>
   <body>
     <!-- MENU -->
-    <div class="navbar has-shadow">
+    <div id="navbar" class="navbar has-shadow">
       <div class="navbar-brand">
-      <a class="navbar-item" href="http://bulma.io">
-        <img src="https://framapic.org/Z7G3pyuinWON/YvPyoO97Xi9n.PNG" height="28">
-      </a>
+        <a class="navbar-item" href="http://bulma.io">
+          <img src="https://framapic.org/Z7G3pyuinWON/YvPyoO97Xi9n.PNG" height="28">
+        </a>
+        <button class="button navbar-burger" data-target="navMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      <div class="navbar-end">
+      <div class="navbar-menu navbar-end" id="navMenu">
         <a class="navbar-item" href="#projects">
           Portfolio
         </a>
@@ -32,10 +38,10 @@
   <div class="columns">
     <div class="column is-1 is-offset-1" style="position:relative;">
       <section class="section">
-        <div class="social-links" style="position:relative;">
-          <a href="#" class="social-link fa fa-lg fa-linkedin"></a><br>
-          <a href="#" class="social-link fa fa-lg fa-dribbble"></a><br>
-          <a href="#" class="social-link fa fa-lg fa-envelope-o"></a>
+        <div id="id-social-links" class="social-links" style="position:relative;">
+          <a href="https://www.linkedin.com/in/estellelepeigneux/" class="social-link fa fa-lg fa-linkedin"></a><br>
+          <a href="https://dribbble.com/estlx " class="social-link fa fa-lg fa-dribbble"></a><br>
+          <a href="mailto:elepeigneux@gmail.com" class="social-link fa fa-lg fa-envelope-o"></a>
         </div>
       </section>
     </div>
@@ -69,8 +75,8 @@
       <h1 class="title">Projects</h1>
       <!-- TILES -->
       <div class="tile is-ancestor">
-        <div class="tile is-3 is-parent">
-          <div class="project card tile is-child">
+        <a href="#" class="tile is-3 is-parent">
+          <div class="project green-hover card tile is-child">
               <div class="card-image">
                 <figure class="image">
                   <img src="https://framapic.org/OQcbY8vEVMjc/d3uVtlTSV6JP.jpg" alt="Image">
@@ -85,10 +91,10 @@
                 </h2>
               </div>
             </div>
-        </div>
+        </a>
         <div class="tile is-vertical is-3">
           <div class="tile is-parent">
-            <div class="project card tile is-child">
+            <a class="project blue-hover card tile is-child">
               <div class="card-image">
                 <figure class="image">
                   <img src="https://framapic.org/3rnJqPV4csop/6q2zsJwEcepE.jpg" alt="Image">
@@ -102,10 +108,10 @@
                   Bringing games and education together
                 </h2>
               </div>
-            </div>
+            </a>
           </div>
           <div class="tile is-parent">
-            <div class="project card tile is-child">
+            <a class="project pink-hover card tile is-child">
               <div class="card-image">
                 <figure class="image">
                   <img src="https://framapic.org/CQlCbxIgkOMn/ZDGa4LYtpqY6.jpg" alt="Image">
@@ -119,12 +125,12 @@
                   Find the best place to eat
                 </h2>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <div class="tile is-3 is-vertical">
           <div class="tile is-parent">
-            <div class="project card tile is-child">
+            <a class="project pink-hover card tile is-child">
               <div class="card-image">
                 <figure class="image">
                   <img src="https://framapic.org/RZkQthGdg2F5/l8FFTKDT17G2.jpg" alt="Image">
@@ -138,10 +144,10 @@
                   How to cook ? Where to store ? Find it now !
                 </h2>
               </div>
-            </div>
+            </a>
           </div>
           <div class="tile is-parent">
-            <div class="project card tile is-child">
+            <a class="project green-hover card tile is-child">
               <div class="card-image">
                 <figure class="image">
                   <img src="https://framapic.org/2ZLqzNlOl3Hr/p77Bn6PZeJIy.jpg" alt="Image">
@@ -155,7 +161,7 @@
                   Never forget a good candidate again
                 </h2>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -198,9 +204,42 @@
     </div>
   </section>
 
-  </div>
+  </div>  
   
 
   </div>
+
+
+  <script>
+  /** JS HERE **/
+
+  /** NAVBAR **/
+  document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any nav burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+  });
+  /** END NAVBAR **/
+  </script>
   </body>
 </html>

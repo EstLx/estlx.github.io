@@ -1,6 +1,6 @@
 /** SOCIAL LINKS **/
-.social-links {
-	
+.social-links > a{
+	transition:all 0.3s ease;
 }
 
 .social-link {
@@ -35,7 +35,36 @@
 }
 
 /** PROJECTS **/
-.project:hover{
-	opacity: 0.7;
+.project figure img {
+	opacity:1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.project:hover img{
+	opacity: 0.5;
+}
 
+.pink-hover figure {
+	background: #ea4c89;
+}
+.pink-hover:hover h1{
+	color: #ea4c89;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.blue-hover figure {
+	background: #007bb5;
+}
+.blue-hover:hover h1{
+	color: #007bb5;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.green-hover figure {
+	background: #00b489;
+}
+.green-hover:hover h1{
+	color: #00b489;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
 }
