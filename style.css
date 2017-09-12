@@ -38,7 +38,7 @@
     color: white;
 }
 
-.fa:hover {
+.social-links .fa:hover {
     opacity: 0.7;
     background: black;
     color: white;
