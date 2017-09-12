@@ -45,7 +45,7 @@
 }
 
 /** PROJECTS **/
-.project figure img {
+.project .image img {
 	opacity:1;
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
@@ -54,7 +54,7 @@
 	opacity: 0.5;
 }
 
-.pink-hover figure {
+.pink-hover .image {
 	background: #ea4c89;
 }
 .pink-hover:hover h1{
@@ -62,7 +62,7 @@
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
-.blue-hover figure {
+.blue-hover .image {
 	background: #007bb5;
 }
 .blue-hover:hover h1{
@@ -70,11 +70,19 @@
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
-.green-hover figure {
+.green-hover .image {
 	background: #00b489;
 }
 .green-hover:hover h1{
 	color: #00b489;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.grey-hover .image {
+	background: #545454;
+}
+.grey-hover:hover h1{
+	color: #545454;
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }

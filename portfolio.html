@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Estelle Lepeigneux's portfolio</title>
+    <link rel="shortcut icon" 
+      type="image/png" 
+      href="https://framapic.org/Z7G3pyuinWON/YvPyoO97Xi9n.PNG">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
@@ -66,7 +69,7 @@
             <span class="tag">Balsamiq mockups</span>
             <span class="tag">Bulma</span>
           </div>
-          <h4>Objective</h4>
+          <h4>Genesis</h4>
           <p>The day I decided I wanted to focus more on design and ergonomy, I knew I had to make a portfolio. So I started working on it during the free time I had, dreaming that one day I could achieve this idea full of sparkles that I have. Just because you are reading this right now, I guess I can say that it's a hit.</p>
           <p>I wanted it to look simple yet elegant, colorful but without eccentricity, just like me.</p>
           <h4>Work done</h4>
@@ -84,22 +87,45 @@
 
           <div class="tile is-ancestor">
             <div class="tile is-parent">
-              <div class="tile image is-child">
-                <img src="http://bulma.io/images/placeholders/640x480.png">
+              <div class="tile project grey-hover image is-child" id="gallery-tile-1">
+                <a class="image"><img src="https://framapic.org/c2kUus16z4yD/GfQ6RjOrU1go.jpg"></a>
               </div>
             </div>
             <div class="tile is-parent">
-              <div class="tile image is-child">
-                <img src="http://bulma.io/images/placeholders/640x480.png">
+              <div class="tile project grey-hover image is-child" id="gallery-tile-2">
+                <a class="image"><img src="https://framapic.org/tspRzQNpICrw/KCgZmgCJ7wIV.png"></a>
               </div>
             </div>
             <div class="tile is-parent">
-              <div class="tile image is-child">
-                <img src="http://bulma.io/images/placeholders/640x480.png">
+              <div class="tile project grey-hover image is-child" id="gallery-tile-3">
+                <a class="image"><img src="https://framapic.org/SIBQvNP6TtJu/aUBHGn0Fj6VK.png"></a>
               </div>
             </div>
 
           </div>
+
+          <div id="gallery-modal-1" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <img src="https://framapic.org/c2kUus16z4yD/GfQ6RjOrU1go.jpg">
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+          <div id="gallery-modal-2" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <img src="https://framapic.org/tspRzQNpICrw/KCgZmgCJ7wIV.png">
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+          <div id="gallery-modal-3" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <img src="https://framapic.org/SIBQvNP6TtJu/aUBHGn0Fj6VK.png">
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+
         </div>
       </section>
     </div>
@@ -174,6 +200,20 @@ $('.transition').leavePage();
       $('#flash').hide();
     });
 
+
+$('.modal-close').click(function() {
+  $('.modal').removeClass("is-active");
+});
+
+$('#gallery-tile-1').click(function() {
+  $('#gallery-modal-1').addClass("is-active");
+});
+$('#gallery-tile-2').click(function() {
+  $('#gallery-modal-2').addClass("is-active");
+});
+$('#gallery-tile-3').click(function() {
+  $('#gallery-modal-3').addClass("is-active");
+});
 
 
   </script>
