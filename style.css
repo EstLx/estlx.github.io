@@ -1,3 +1,8 @@
+/** NAVBAR **/
+.navbar-item {
+	transition: .3s ease-in-out
+}
+
 /** SOCIAL LINKS **/
 .social-links > a{
 	transition:all 0.3s ease;
