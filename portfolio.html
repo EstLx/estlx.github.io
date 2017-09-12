@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Estelle Lepeigneux's portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://use.fontawesome.com/59c390bf14.js"></script>
+  </head>
+  <body>
+    <!-- MENU -->
+    <div id="navbar" class="navbar has-shadow">
+      <div class="navbar-brand">
+        <a href="index.html" class="transition navbar-item">
+          <img src="https://framapic.org/Z7G3pyuinWON/YvPyoO97Xi9n.PNG" height="28">
+        </a>
+        <button class="button navbar-burger" data-target="navMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="navbar-menu navbar-end cl-effect-4" id="navMenu">
+        <a class="transition navbar-item" href="index.html#projects">
+          Portfolio
+        </a>
+        <a class="transition navbar-item" href="index.html#about">
+          About me
+        </a>
+        <a class="navbar-item" href="index.html#contact">
+          Contact
+        </a>
+      </div>
+    </div>
+  
+  <div class="columns">
+    <div class="is-hidden-mobile column is-1 is-offset-1" style="position:relative;">
+      <section class="section">
+        <div id="id-social-links hi-icon-effect-1" class="social-links" style="position:relative;">
+        <a href="https://github.com/EstLx" class="social-link fa fa-lg fa-github"></a><br>
+          <a href="https://www.linkedin.com/in/estellelepeigneux/" class="social-link fa fa-lg fa-linkedin"></a><br>
+          
+          <a href="https://dribbble.com/estlx" class="social-link fa fa-lg fa-dribbble"></a><br>
+          <a href="mailto:elepeigneux@gmail.com" class="social-link fa fa-lg fa-envelope-o"></a>
+        </div>
+      </section>
+    </div>
+    <div class="column is-8">
+
+      <!-- PROJECT PAGE -->
+      <section class="section">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="index.html" class="transition"><span class="icon is-small"><i class="fa fa-home"></i></span>Home</a></li>
+            <li><a href="index.html#projects" class="transition">Projects</a></li>
+            <li class="is-active"><a href="#" class="transition">Portfolio</a></li>
+          </ul>
+        </nav>
+
+        <div class="content">
+          <h1>Portfolio</h1>
+          <div class="tags">
+            <span class="tag">Gimp</span>
+            <span class="tag">Balsamiq mockups</span>
+            <span class="tag">Bulma</span>
+          </div>
+          <h4>Objective</h4>
+          <p>The day I decided I wanted to focus more on design and ergonomy, I knew I had to make a portfolio. So I started working on it during the free time I had, dreaming that one day I could achieve this idea full of sparkles that I have. Just because you are reading this right now, I guess I can say that it's a hit.</p>
+          <p>I wanted it to look simple yet elegant, colorful but without eccentricity, just like me.</p>
+          <h4>Work done</h4>
+          <p>I decided to start working on my project following a few steps :
+            <ul><li>What are the goals ? Which informations do I want to show ?</li>
+            <li>Write down inspirations and ideas</li>
+            <li>Create a timeline for the project</li>
+            <li>Think about a brand image</li>
+            <li>Sketching my portfolio on Balsamiq mockups</li>
+            <li>Organizing informations and menu creation</li>
+            <li>Coding with Bulma framework (HTML/CSS/JS only)</li>
+            </ul>
+            <blockquote>These steps were highly inspired by <a href="https://www.smashingmagazine.com/2013/06/workflow-design-develop-modern-portfolio-website/">this article</a> by Adham Dannaway on smashingmagazine</blockquote>
+          </p>
+
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile image is-child">
+                <img src="http://bulma.io/images/placeholders/640x480.png">
+              </div>
+            </div>
+            <div class="tile is-parent">
+              <div class="tile image is-child">
+                <img src="http://bulma.io/images/placeholders/640x480.png">
+              </div>
+            </div>
+            <div class="tile is-parent">
+              <div class="tile image is-child">
+                <img src="http://bulma.io/images/placeholders/640x480.png">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+  
+  
+  
+
+  </div>
+
+
+  <script>
+  /** JS HERE **/
+
+  /** NAVBAR **/
+  document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any nav burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+  });
+  /** END NAVBAR **/
+
+  /* 
+* Function to animate leaving a page
+*/
+$.fn.leavePage = function() {   
+    
+  this.click(function(event){
+
+    // Don't go to the next page yet.
+    event.preventDefault();
+    linkLocation = this.href;
+    
+    // Fade out this page first.
+    $('body').fadeOut(500, function(){
+      
+      // Then go to the next page.
+      window.location = linkLocation;
+    });      
+  }); 
+};
+
+
+/* 
+* Call the leavePage function upon link clicks with the "transition" class
+*/
+$('.transition').leavePage();
+
+
+/** PREVENTING UNLOADED FLASH **/
+    $(document).ready(function() {
+      $('#flash').hide();
+    });
+
+
+
+  </script>
+  </body>
+</html>

@@ -76,7 +76,7 @@
       <h1 class="title">Projects</h1>
       <!-- TILES -->
       <div class="tile is-ancestor">
-        <a href="project-raw.html" class="tile is-3 is-parent">
+        <a href="portfolio.html" class="tile is-3 is-parent transition">
           <div class="project green-hover card tile is-child">
               <div class="card-image">
                 <figure class="image">
@@ -95,7 +95,7 @@
         </a>
         <div class="tile is-vertical is-3">
           <div class="tile is-parent">
-            <a class="project pink-hover card tile is-child">
+            <a class="project pink-hover card tile is-child transition">
               <div class="card-image">
                 <figure class="image">
                   <img src="https://framapic.org/3rnJqPV4csop/6q2zsJwEcepE.jpg" alt="Image">
@@ -112,7 +112,7 @@
             </a>
           </div>
           <div class="tile is-parent">
-            <a class="project blue-hover card tile is-child">
+            <a class="project blue-hover card tile is-child transition">
               <div class="card-image">
                 <figure class="image">
                   <img src="https://framapic.org/CQlCbxIgkOMn/ZDGa4LYtpqY6.jpg" alt="Image">
@@ -131,7 +131,7 @@
         </div>
         <div class="tile is-3 is-vertical">
           <div class="tile is-parent">
-            <a class="project green-hover card tile is-child">
+            <a class="project green-hover card tile is-child transition">
               <div class="card-image">
                 <figure class="image">
                   <img src="https://framapic.org/RZkQthGdg2F5/l8FFTKDT17G2.jpg" alt="Image">
@@ -148,7 +148,7 @@
             </a>
           </div>
           <div class="tile is-parent">
-            <a class="project pink-hover card tile is-child">
+            <a class="project pink-hover card tile is-child transition">
               <div class="card-image">
                 <figure class="image">
                   <img src="https://framapic.org/2ZLqzNlOl3Hr/p77Bn6PZeJIy.jpg" alt="Image">
@@ -240,6 +240,44 @@
 
   });
   /** END NAVBAR **/
+
+  /** CHANGE PAGE ANIMATION **/
+  /* 
+  * Function to animate leaving a page
+  */
+  $.fn.leavePage = function() {   
+      
+    this.click(function(event){
+
+      // Don't go to the next page yet.
+      event.preventDefault();
+      linkLocation = this.href;
+      
+      // Fade out this page first.
+      $('body').fadeOut(500, function(){
+        
+        // Then go to the next page.
+        window.location = linkLocation;
+      });      
+    }); 
+  };
+
+
+  /* 
+  * Call the leavePage function upon link clicks with the "transition" class
+  */
+  $('.transition').leavePage();
+
+  /** CHANGE PAGE END **/
+
+  /** PREVENTING UNLOADED FLASH **/
+
+
+    $(document).ready(function() {
+      $('#flash').hide();
+    });
+
+
   </script>
   </body>
 </html>
