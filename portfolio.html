@@ -143,55 +143,88 @@
 
 
   <script>
-  /** JS HERE **/
+      /** JS HERE **/
 
-  /** NAVBAR **/
-  document.addEventListener('DOMContentLoaded', function () {
+      /** NAVBAR **/
+      document.addEventListener('DOMContentLoaded', function () {
 
-  // Get all "navbar-burger" elements
-  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      // Get all "navbar-burger" elements
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-  // Check if there are any nav burgers
-  if ($navbarBurgers.length > 0) {
+      // Check if there are any nav burgers
+      if ($navbarBurgers.length > 0) {
 
-    // Add a click event on each of them
-    $navbarBurgers.forEach(function ($el) {
-      $el.addEventListener('click', function () {
+        // Add a click event on each of them
+        $navbarBurgers.forEach(function ($el) {
+          $el.addEventListener('click', function () {
 
-        // Get the target from the "data-target" attribute
-        var target = $el.dataset.target;
-        var $target = document.getElementById(target);
+            // Get the target from the "data-target" attribute
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
 
-        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-        $el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
+            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
 
       });
+      /** END NAVBAR **/
+
+      /* 
+    * Function to animate leaving a page
+    */
+    $.fn.leavePage = function() {   
+        
+      this.click(function(event){
+
+        // Don't go to the next page yet.
+        event.preventDefault();
+        linkLocation = this.href;
+        
+        // Fade out this page first.
+        $('body').fadeOut(300, function(){
+          
+          // Then go to the next page.
+          window.location = linkLocation;
+        });      
+      }); 
+    };
+
+
+
+
+    /* 
+    * Call the leavePage function upon link clicks with the "transition" class
+    */
+    $('.transition').leavePage();
+
+
+    /** PREVENTING UNLOADED FLASH **/
+        $(document).ready(function() {
+          $('#flash').hide();
+        });
+
+
+    /** MODAL MANAGER **/
+    $('.modal-close').click(function() {
+      $('.modal').removeClass("is-active");
     });
-  }
+    $('.modal-background').click(function() {
+      $('.modal').removeClass("is-active");
+    });
 
-  });
-  /** END NAVBAR **/
-
-  /* 
-* Function to animate leaving a page
-*/
-$.fn.leavePage = function() {   
-    
-  this.click(function(event){
-
-    // Don't go to the next page yet.
-    event.preventDefault();
-    linkLocation = this.href;
-    
-    // Fade out this page first.
-    $('body').fadeOut(300, function(){
-      
-      // Then go to the next page.
-      window.location = linkLocation;
-    });      
-  }); 
-};
+    $('#gallery-tile-1').click(function() {
+      $('#gallery-modal-1').addClass("is-active");
+    });
+    $('#gallery-tile-2').click(function() {
+      $('#gallery-modal-2').addClass("is-active");
+    });
+    $('#gallery-tile-3').click(function() {
+      $('#gallery-modal-3').addClass("is-active");
+    });
 
 /** SOCIAL LINK ANIMATION**/
   $(window).scroll(function() {
@@ -209,39 +242,6 @@ $.fn.leavePage = function() {
       $("#id-social-links").css("top","auto");
     }
   });
-
-
-/* 
-* Call the leavePage function upon link clicks with the "transition" class
-*/
-$('.transition').leavePage();
-
-
-/** PREVENTING UNLOADED FLASH **/
-    $(document).ready(function() {
-      $('#flash').hide();
-    });
-
-
-/** MODAL MANAGER **/
-$('.modal-close').click(function() {
-  $('.modal').removeClass("is-active");
-});
-$('.modal-background').click(function() {
-  $('.modal').removeClass("is-active");
-});
-
-$('#gallery-tile-1').click(function() {
-  $('#gallery-modal-1').addClass("is-active");
-});
-$('#gallery-tile-2').click(function() {
-  $('#gallery-modal-2').addClass("is-active");
-});
-$('#gallery-tile-3').click(function() {
-  $('#gallery-modal-3').addClass("is-active");
-});
-
-
 
 
   </script>
