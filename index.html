@@ -244,6 +244,24 @@
   });
   /** END NAVBAR **/
 
+  /** SOCIAL LINK ANIMATION**/
+  $(window).scroll(function() {
+      var y_scroll_pos = window.pageYOffset;
+      var scroll_pos_test = 90;             
+    // set to whatever you want it to be
+
+      if(y_scroll_pos > scroll_pos_test) {
+       $("#id-social-links").css("position","fixed");
+       $("#id-social-links").css("top","15px");
+      }
+    else
+    {
+      $("#id-social-links").css("position","relative");
+      $("#id-social-links").css("top","auto");
+    }
+  });
+
+
   /** CHANGE PAGE ANIMATION **/
   /* 
   * Function to animate leaving a page

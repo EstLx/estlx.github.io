@@ -41,7 +41,7 @@
   <div class="columns">
     <div class="is-hidden-mobile column is-1 is-offset-1" style="position:relative;">
       <section class="section">
-        <div id="id-social-links hi-icon-effect-1" class="social-links" style="position:relative;">
+        <div id="id-social-links" class="social-links" style="position:relative;">
         <a href="https://github.com/EstLx" class="social-link fa fa-lg fa-github"></a><br>
           <a href="https://www.linkedin.com/in/estellelepeigneux/" class="social-link fa fa-lg fa-linkedin"></a><br>
           
@@ -193,6 +193,23 @@ $.fn.leavePage = function() {
   }); 
 };
 
+/** SOCIAL LINK ANIMATION**/
+  $(window).scroll(function() {
+      var y_scroll_pos = window.pageYOffset;
+      var scroll_pos_test = 90;             
+    // set to whatever you want it to be
+
+      if(y_scroll_pos > scroll_pos_test) {
+       $("#id-social-links").css("position","fixed");
+       $("#id-social-links").css("top","15px");
+      }
+    else
+    {
+      $("#id-social-links").css("position","relative");
+      $("#id-social-links").css("top","auto");
+    }
+  });
+
 
 /* 
 * Call the leavePage function upon link clicks with the "transition" class
@@ -223,6 +240,8 @@ $('#gallery-tile-2').click(function() {
 $('#gallery-tile-3').click(function() {
   $('#gallery-modal-3').addClass("is-active");
 });
+
+
 
 
   </script>
