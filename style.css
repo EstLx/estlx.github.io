@@ -29,7 +29,7 @@
 }
 
 .fa-github {
-    background: #e8e8e8;
+    background: #595959;
     color: black;
 }
 
@@ -42,6 +42,26 @@
     opacity: 0.7;
     background: black;
     color: white;
+}
+
+/** HERO **/
+#hero-back {
+  background: url(resources/annie-spratt-277569.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+#hero-back-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background:linear-gradient(
+                     rgba(0,0,0, .7), 
+                     rgba(0,00,0, .7));
 }
 
 /** PROJECTS **/
@@ -127,7 +147,6 @@
 /** IMG HOVERS **/
 @import url(https://fonts.googleapis.com/css?family=Montserrat:200);
 .snip1577 {
-  font-family: 'Montserrat', Arial, sans-serif;
   position: relative;
   display: inline-block;
   overflow: hidden;
