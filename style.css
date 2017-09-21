@@ -40,8 +40,8 @@
 }
 
 .social-links .fa:hover {
-    background: #2d2d2d;
-    color: white;
+    background: white;
+    color: black !important;
 }
 
 /** HERO **/
@@ -78,7 +78,7 @@
   padding-bottom: 19px;
   padding-top: 15px;
   color: #ffffff;
-  background-color: #fccf3c;
+  background-color: #fcc920;
   transition: background-color .3s, 
     opacity .5s, visibility .5s;
   opacity: 0;
@@ -99,7 +99,7 @@
 .project .image img {
 	opacity:1;
 	-webkit-transition: .2s ease-in-out;
-	transition: .2s ease-in-out;
+	transition: .2s ease-in-out; 
 }
 .project:hover img{
 	opacity: 0.5;

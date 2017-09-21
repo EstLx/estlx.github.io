@@ -26,13 +26,13 @@
         </button>
       </div>
       <div class="navbar-menu navbar-end" id="navMenu">
-        <a class="navbar-item" href="#projects-desktop">
-          Portfolio
+        <a class="navbar-item js-scrollTo" href="#projects-desktop">
+          Projects
         </a>
-        <a class="navbar-item" href="#about">
+        <a class="navbar-item js-scrollTo" href="#about">
           About me
         </a>
-        <a class="navbar-item" href="#contact">
+        <a class="navbar-item js-scrollTo" href="#contact">
           Contact
         </a>
       </div>
@@ -194,8 +194,8 @@
             </a>
             </div>
             <div class="column is-3">
-              <a href="rearth.html" class="">
-                <div class="snip1577 transition">
+              <a href="rearth.html" class=" transition">
+                <div class="snip1577">
                   <figure class="image">
                     <img src="https://framapic.org/3rnJqPV4csop/6q2zsJwEcepE.jpg" alt="Image">
                   </figure>
@@ -422,6 +422,15 @@
     });
   }
 
+  });
+
+  $(document).ready(function() {
+    $('.js-scrollTo').on('click', function() { // Au clic sur un élément
+      var page = $(this).attr('href'); // Page cible
+      var speed = 750; // Durée de l'animation (en ms)
+      $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+      return false;
+    });
   });
   /** END NAVBAR **/
 
