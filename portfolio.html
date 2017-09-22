@@ -26,8 +26,11 @@
         </button>
       </div>
       <div class="navbar-menu navbar-end cl-effect-4" id="navMenu">
-        <a class="transition navbar-item" href="index.html#projects">
-          Portfolio
+        <a class="navbar-item js-scrollTo is-hidden-desktop" href="#projects-mobile">
+          Projects
+        </a>
+        <a class="navbar-item js-scrollTo is-hidden-touch" href="#projects-desktop">
+          Projects
         </a>
         <a class="transition navbar-item" href="index.html#about">
           About me
@@ -55,7 +58,8 @@
         <nav class="breadcrumb" aria-label="breadcrumbs">
           <ul>
             <li><a href="index.html" class="transition"><span class="icon is-small"><i class="fa fa-home"></i></span>Home</a></li>
-            <li><a href="index.html#projects" class="transition">Projects</a></li>
+            <li class="is-hidden-desktop"><a href="index.html#projects-mobile" class="transition">Projects</a></li>
+            <li class="is-hidden-touch"><a href="index.html#projects-desktop" class="transition">Projects</a></li>
             <li class="is-active"><a href="#" class="transition">Portfolio</a></li>
           </ul>
         </nav>
