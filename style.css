@@ -56,12 +56,17 @@
 
 #hero-back-cover {
   -webkit-background-size: cover;
+  max-width:1000px;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background:linear-gradient(
                      rgba(0,0,0, .7), 
                      rgba(0,00,0, .7));
+}
+
+.hero .title {
+  padding-bottom:5px;
 }
 
 /** BACK TO TOP **/
