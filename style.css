@@ -135,6 +135,11 @@
 	color: #545454;
 }
 
+#projects-mobile .image{
+  max-height: 450px;
+  overflow: hidden;
+}
+
 /** PROJECT DETAIL **/
 .project-tiles img{
 	border-width: 1px;
