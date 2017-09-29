@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 /** NAVBAR **/
 
 .navbar-item {
@@ -183,6 +187,11 @@
   to {
     stroke-dashoffset: 0;
   }
+}
+
+/** PORTRAIT **/
+#portrait {
+  max-width: 200px;
 }
 
 /** IMG HOVERS **/
